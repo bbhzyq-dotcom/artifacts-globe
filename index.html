@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>如果文物都回家 - 3D 可视化复刻</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app-shell">
+      <aside id="sidebar">
+        <div class="panel-title">
+          <h1>如果文物都回家</h1>
+          <p>文物归位可视化复刻 Demo</p>
+        </div>
+
+        <section class="panel-block">
+          <h2>展示模式</h2>
+          <div class="button-row">
+            <button data-mode="scattered" class="mode-btn active">分散</button>
+            <button data-mode="homecoming" class="mode-btn">归位</button>
+            <button data-mode="standing" class="mode-btn">立体</button>
+            <button data-mode="flat" class="mode-btn">平面</button>
+            <button data-mode="particles" class="mode-btn">粒子</button>
+          </div>
+        </section>
+
+        <section class="panel-block">
+          <h2>时间轴</h2>
+          <div class="timeline-row">
+            <button id="play-timeline">播放归位</button>
+            <span id="timeline-year">Year: --</span>
+          </div>
+        </section>
+
+        <section class="panel-block">
+          <h2>搜索</h2>
+          <input type="text" id="search-input" placeholder="搜索文物名称或国家..." class="search-input">
+        </section>
+
+        <section class="panel-block">
+          <h2>排序</h2>
+          <div class="button-row">
+            <button data-sort="year" class="sort-btn">按年份</button>
+            <button data-sort="country" class="sort-btn">按国家</button>
+          </div>
+        </section>
+
+        <section class="panel-block">
+          <h2>国家筛选</h2>
+          <div class="list" id="country-list"></div>
+        </section>
+      </aside>
+
+      <main id="stage-wrap">
+        <div id="three-container"></div>
+      </main>
+
+      <aside id="detail-panel" class="hidden">
+        <button id="close-detail">关闭</button>
+        <img id="detail-image" alt="artifact" />
+        <h3 id="detail-title"></h3>
+        <p id="detail-country"></p>
+        <p id="detail-year"></p>
+        <p id="detail-desc"></p>
+        <a id="detail-link" target="_blank" rel="noreferrer">查看来源</a>
+      </aside>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
